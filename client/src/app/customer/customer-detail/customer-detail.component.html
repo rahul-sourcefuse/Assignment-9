@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center">
+    <div class="jumbotron">
+        <h1 style="text-decoration: underline;">Customer's Data</h1>
+    <br>
+        <h1 class="display-4">{{customerData.name}}</h1>
+        <p class="lead">Website : {{customerData.website}}</p>
+        <p>Address : {{customerData.address}}</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg">User Associated</a>
+        <a *ngFor="let user of users"
+            [routerLink]="['/users',user.id]">
+                <div>
+                    <div>
+                        <div>
+                            <span>
+                                <ul class="list-group  my-3">
+                                    <li class="list-group-item mx-3">
+                                        {{user?.firstName}} {{user?.lastName}}
+                                    </li>
+                                    
+                                  </ul>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+      </div>
+</div>
